@@ -1,0 +1,50 @@
+
+{
+  "subjects": [
+    {
+      "id": "biology",
+      "name": "Biologia",
+      "color": "#43D9A3"
+    },
+    {
+      "id": "chemistry",
+      "name": "Chimica",
+      "color": "#FFB45C"
+    },
+    {
+      "id": "physics",
+      "name": "Fisica",
+      "color": "#66B5FF"
+    },
+    {
+      "id": "earth-sciences",
+      "name": "Scienze della Terra",
+      "color": "#B49AFF"
+    },
+    {
+      "id": "geography",
+      "name": "Geografia",
+      "color": "#64D6E8"
+    },
+    {
+      "id": "computer-science",
+      "name": "Informatica",
+      "color": "#F28AB2"
+    },
+    {
+      "id": "civic-education",
+      "name": "Educazione civica",
+      "color": "#FFD166"
+    },
+    {
+      "id": "history",
+      "name": "Storia",
+      "color": "#D7A679"
+    },
+    {
+      "id": "health-education",
+      "name": "Educazione sanitaria",
+      "color": "#FF7777"
+    }
+  ]
+}
