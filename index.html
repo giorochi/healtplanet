@@ -4,90 +4,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="theme-color" content="#050b16">
   <title>HEALTH PLANET</title>
-  <meta name="description" content="Un viaggio interattivo alla scoperta della salute nel mondo.">
+
+  <link rel="stylesheet"
+    href="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Widgets/widgets.css">
 
   <link rel="stylesheet" href="css/style.css">
-
-  <link
-    href="https://cesium.com/downloads/cesiumjs/releases/1.146/Build/Cesium/Widgets/widgets.css"
-    rel="stylesheet"
-  >
-
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.146/Build/Cesium/Cesium.js"></script>
+  <script>
+    window.CESIUM_BASE_URL =
+      "https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/";
+  </script>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Cesium.js"></script>
 </head>
 
 <body>
-
   <header class="topbar">
-    <div class="brand">
-      <span class="brand-symbol">H</span>
-      <span>HEALTH <strong>PLANET</strong></span>
-    </div>
-
-    <div class="topbar-right">
-      <span class="status-dot"></span>
-      SISTEMA ONLINE
-    </div>
+    <a class="logo" href="#">HEALTH<span>PLANET</span></a>
+    <nav>
+      <button id="exploreButton">Esplora</button>
+      <button id="routesButton">Percorsi</button>
+      <button id="aboutButton">Progetto</button>
+    </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">UN MONDO DA ESPLORARE</p>
-        <h1>HEALTH <span>PLANET</span></h1>
-        <p>La salute non ha confini.</p>
-      </div>
+      <div class="eyebrow">UN PIANETA · UNA SOLA SALUTE</div>
+      <h1>La salute non ha<br><span>confini.</span></h1>
+      <p>Esplora il mondo e scopri il legame tra salute, ambiente e società.</p>
 
       <div class="search-box">
-        <span>⌕</span>
-        <input
-          id="searchInput"
-          type="search"
-          placeholder="Cerca una città..."
-          autocomplete="off"
-        >
-        <div id="searchResults"></div>
+        <input id="citySearch" type="search"
+          placeholder="Cerca una città o un luogo...">
+        <button id="searchButton">Cerca</button>
       </div>
     </section>
 
     <section class="globe-section">
-      <div id="cesiumContainer"></div>
-
-      <div class="globe-label">
-        <span class="status-dot"></span>
-        ESPLORAZIONE GLOBALE
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ESPLORAZIONE GLOBALE</span>
+          <h2>Il nostro pianeta</h2>
+        </div>
+        <span class="status">GLOBO INTERATTIVO</span>
       </div>
 
-      <aside id="preview" class="preview hidden">
-        <button id="closePreview" class="close-button">×</button>
-        <p class="eyebrow">LOCALITÀ SELEZIONATA</p>
-        <h2 id="previewName"></h2>
-        <p id="previewCountry" class="muted"></p>
-        <p id="previewDescription"></p>
-        <button id="openCity" class="primary-button">
-          SCOPRI LA CITTÀ →
-        </button>
-      </aside>
-
-      <aside id="cityPanel" class="city-panel hidden">
-        <button id="closeCity" class="close-button">×</button>
-        <p class="eyebrow">HEALTH PLANET / LOCALITÀ</p>
-        <h2 id="cityName"></h2>
-        <p id="cityTheme" class="muted"></p>
-        <div id="citySections"></div>
-      </aside>
+      <div id="globeContainer">
+        <div id="globe"></div>
+        <div class="globe-label">HEALTH PLANET · EARTH</div>
+      </div>
     </section>
 
-    <footer>
-      <span>HEALTH PLANET</span>
-      <span>ESPLORA · CONOSCI · COMPRENDI</span>
-    </footer>
+    <section id="cityPreview" class="city-preview hidden">
+      <div class="preview-content">
+        <span class="eyebrow">LUOGO SELEZIONATO</span>
+        <h2 id="previewName"></h2>
+        <p id="previewDescription"></p>
+        <button id="openCityButton">Scopri questo luogo</button>
+      </div>
+    </section>
+
+    <section id="cityContent" class="city-content hidden">
+      <button id="backButton" class="back-button">← Torna al globo</button>
+      <div class="eyebrow" id="cityCountry"></div>
+      <h2 id="cityTitle"></h2>
+      <p id="cityDescription"></p>
+      <div id="citySections"></div>
+    </section>
   </main>
 
-  <script src="js/app.js"></script>
+  <footer>
+    HEALTH PLANET <span>·</span> Un progetto di educazione alla salute
+  </footer>
 
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
-
