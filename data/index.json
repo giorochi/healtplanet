@@ -1,8 +1,21 @@
 
 {
-  "cities": [
-    "cities/taranto.json"
-  ],
-  "routes": []
+  "project": {
+    "name": "HEALTH PLANET",
+    "version": "1.0.0",
+    "description": "Esplora il mondo attraverso la salute, la scienza e l'ambiente."
+  },
+  "cities": [],
+  "routes": [],
+  "subjects": [
+    "Biologia",
+    "Chimica",
+    "Fisica",
+    "Scienze della Terra",
+    "Geografia",
+    "Informatica",
+    "Educazione civica",
+    "Storia",
+    "Educazione sanitaria"
+  ]
 }
-
