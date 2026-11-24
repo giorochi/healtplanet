@@ -4,111 +4,268 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#050b16">
-  <title>HEALTH PLANET</title>
 
-  <link rel="stylesheet"
-    href="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Widgets/widgets.css">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#071522">
+  <meta name="description" content="HEALTH PLANET: esplora il mondo attraverso la salute, la scienza e l'ambiente.">
 
-  <script>
-    window.CESIUM_BASE_URL =
-      "https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/";
-  </script>
+  <title>HEALTH PLANET — Global Science Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Widgets/widgets.css">
+  <link rel="stylesheet" href="./css/style.css">
+
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Cesium.js"></script>
 </head>
 
 <body>
-  <header class="topbar">
-    <a class="logo" href="#">HEALTH<span>PLANET</span></a>
-    <nav>
-      <button id="exploreButton">Esplora</button>
-      <button id="routesButton">Percorsi</button>
-      <button id="aboutButton">Progetto</button>
-    </nav>
-  </header>
 
-  <main>
-    <div class="intro">
-      <div>
-        <span class="eyebrow">UN PIANETA · UNA SOLA SALUTE</span>
-        <h1>Esplora il mondo.</h1>
-        <p>Scopri le connessioni tra salute, ambiente e società.</p>
+  <div class="page-shell">
+
+    <!-- HEADER -->
+    <header class="topbar">
+
+      <a class="brand" href="./index.html">
+        <span class="brand-symbol">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+        <span class="brand-name">
+          HEALTH<span>PLANET</span>
+        </span>
+      </a>
+
+      <nav class="main-navigation">
+        <a href="#exploration" class="nav-link active">Esplorazione</a>
+        <button class="nav-link" id="routesButton">Percorsi</button>
+        <button class="nav-link" id="aboutButton">Il progetto</button>
+      </nav>
+
+      <div class="topbar-status">
+        <span class="status-indicator"></span>
+        ATLANTE INTERATTIVO
       </div>
 
-      <div class="search-box">
-        <input id="citySearch" type="search"
-          placeholder="Cerca una città o un Paese...">
-        <button id="searchButton">Cerca</button>
-      </div>
-    </div>
+    </header>
 
-    <section class="workspace">
-      <div class="globe-panel">
-        <div class="panel-heading">
-          <span>ESPLORAZIONE GLOBALE</span>
-          <span class="live-indicator">● GLOBO 3D</span>
-        </div>
 
-        <div id="globe"></div>
+    <!-- INTRODUZIONE -->
+    <main>
 
-        <div class="globe-footer">
-          <span>Trascina per ruotare</span>
-          <span>Rotella per ingrandire</span>
-        </div>
-      </div>
+      <section class="hero">
 
-      <aside class="information-panel" id="informationPanel">
-        <div id="welcomePanel">
-          <span class="eyebrow">BENVENUTO SU HEALTH PLANET</span>
-          <h2>Il mondo è il nostro campo di studio.</h2>
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span>
+            SCIENZA · SALUTE · AMBIENTE
+          </div>
+
+          <h1>
+            Il pianeta è un sistema.
+            <span>Scopri le sue connessioni.</span>
+          </h1>
+
           <p>
-            Seleziona un indicatore sul globo oppure cerca una città
-            per esplorarne le caratteristiche.
+            Un viaggio attraverso città, territori e fenomeni
+            per comprendere le relazioni tra salute, ambiente
+            e società.
           </p>
 
-          <div class="welcome-card">
-            <span>01</span>
-            <div>
-              <strong>Esplora</strong>
-              <p>Individua luoghi e aree geografiche.</p>
-            </div>
-          </div>
-
-          <div class="welcome-card">
-            <span>02</span>
-            <div>
-              <strong>Approfondisci</strong>
-              <p>Consulta testi, immagini e dati scientifici.</p>
-            </div>
-          </div>
-
-          <div class="welcome-card">
-            <span>03</span>
-            <div>
-              <strong>Collega le discipline</strong>
-              <p>Scopri come le materie scolastiche si incontrano.</p>
-            </div>
-          </div>
         </div>
 
-        <div id="cityInformation" class="hidden">
-          <button id="backButton" class="back-button">← Tutti i luoghi</button>
-          <span class="eyebrow" id="cityCountry"></span>
-          <h2 id="cityTitle"></h2>
-          <p id="cityDescription"></p>
-          <div id="cityTopics" class="topic-list"></div>
-          <div id="citySections"></div>
+        <div class="hero-index">
+          <span class="hero-index-number">01</span>
+          <span class="hero-index-label">WORLD<br>EXPLORATION</span>
         </div>
-      </aside>
-    </section>
-  </main>
 
-  <footer>
-    HEALTH PLANET · Progetto di educazione alla salute
-    <span> · Immagini del globo: NASA GIBS</span>
-  </footer>
+      </section>
 
-  <script type="module" src="js/main.js"></script>
+
+      <!-- ESPLORAZIONE -->
+      <section class="exploration" id="exploration">
+
+        <div class="section-heading">
+
+          <div>
+            <div class="section-kicker">ESPLORA IL MONDO</div>
+            <h2>Global atlas<span>.</span></h2>
+          </div>
+
+          <div class="section-description">
+            Seleziona un luogo sul globo per esplorarne
+            le caratteristiche e i contenuti scientifici.
+          </div>
+
+        </div>
+
+
+        <!-- RICERCA -->
+        <div class="search-area">
+
+          <div class="search-box">
+            <span class="search-icon">⌕</span>
+
+            <input
+              type="search"
+              id="citySearch"
+              placeholder="Cerca una città o un Paese..."
+              autocomplete="off"
+            >
+
+            <button id="searchButton" aria-label="Cerca">
+              CERCA
+            </button>
+          </div>
+
+          <div id="searchMessage" class="search-message"></div>
+
+        </div>
+
+
+        <!-- GLOBO E PANNELLO -->
+        <div class="workspace">
+
+          <div class="globe-panel">
+
+            <div class="globe-overlay-top">
+              <div class="globe-label">
+                <span class="status-indicator"></span>
+                PLANET VIEW
+              </div>
+
+              <div class="globe-coordinates">
+                EARTH · 3D
+              </div>
+            </div>
+
+            <div id="globe"></div>
+
+            <div class="globe-overlay-bottom">
+              <span>INTERACTIVE GLOBE</span>
+              <span>TRASCINA PER ESPLORARE</span>
+            </div>
+
+          </div>
+
+
+          <!-- PANNELLO INFORMATIVO -->
+          <aside class="information-panel" id="informationPanel">
+
+            <!-- SCHERMATA INIZIALE -->
+            <div id="welcomePanel" class="welcome-panel">
+
+              <div class="panel-number">01 / INTRODUZIONE</div>
+
+              <div class="welcome-illustration">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit-core">
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="welcome-content">
+
+                <div class="panel-kicker">BENVENUTO IN HEALTH PLANET</div>
+
+                <h2>Ogni luogo<br>racconta una storia.</h2>
+
+                <p>
+                  Il territorio, l'ambiente e la salute sono
+                  elementi strettamente connessi.
+                  Esplora il globo e scopri come.
+                </p>
+
+                <button class="primary-button" id="exploreButton">
+                  INIZIA A ESPLORARE
+                  <span>↗</span>
+                </button>
+
+              </div>
+
+              <div class="welcome-footer">
+                <span>HEALTH PLANET</span>
+                <span>GLOBAL SCIENCE ATLAS</span>
+              </div>
+
+            </div>
+
+
+            <!-- INFORMAZIONI CITTÀ -->
+            <div id="cityInformation" class="city-information hidden">
+
+              <button class="back-button" id="backButton">
+                <span>←</span>
+                TORNA ALL'ATLANTE
+              </button>
+
+              <div class="city-header">
+
+                <div class="panel-number">LOCALITÀ SELEZIONATA</div>
+
+                <div id="cityCountry" class="city-country"></div>
+
+                <h2 id="cityTitle"></h2>
+
+                <div class="city-header-line"></div>
+
+                <p id="cityDescription" class="city-description"></p>
+
+              </div>
+
+              <div class="city-content">
+
+                <div class="content-heading">
+                  <span>ESPLORA IL LUOGO</span>
+                  <span class="content-heading-line"></span>
+                </div>
+
+                <div id="citySections"></div>
+
+              </div>
+
+              <div class="city-footer">
+                <span>HEALTH PLANET</span>
+                <span>SCIENTIFIC CONTENT</span>
+              </div>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+      <div class="footer-brand">
+        HEALTH<span>PLANET</span>
+      </div>
+
+      <div class="footer-description">
+        Un atlante per comprendere il mondo.
+      </div>
+
+      <div class="footer-credit">
+        POWERED BY CESIUM · IMAGERY BY NASA GIBS
+      </div>
+
+    </footer>
+
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+
 </body>
 </html>
