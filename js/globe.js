@@ -39,18 +39,23 @@ export function initializeGlobe() {
   scene.globe.enableLighting = false;
 
   // Texture terrestre globale NASA Blue Marble
-  const imagery = new Cesium.UrlTemplateImageryProvider({
-    url:
-      "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/" +
-      "BlueMarble_ShadedRelief_Bathymetry/default/500m/" +
-      "{z}/{y}/{x}.jpeg",
+const imagery = new Cesium.WebMapServiceImageryProvider({
+  url: "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi",
+  layers: "BlueMarble_ShadedRelief_Bathymetry",
+  parameters: {
+    service: "WMS",
+    version: "1.1.1",
+    request: "GetMap",
+    styles: "",
+    format: "image/jpeg",
+    transparent: false
+  },
+  tilingScheme: new Cesium.GeographicTilingScheme(),
+  maximumLevel: 7,
+  credit: "NASA GIBS"
+});
 
-    tilingScheme: new Cesium.GeographicTilingScheme(),
-    maximumLevel: 7,
-    credit: "NASA GIBS"
-  });
-
-  viewer.imageryLayers.addImageryProvider(imagery);
+viewer.imageryLayers.addImageryProvider(imagery);
 
   viewer.camera.flyTo({
     destination: Cesium.Cartesian3.fromDegrees(
