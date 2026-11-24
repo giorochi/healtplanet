@@ -1,1 +1,56 @@
 
+{
+  "id": "taranto",
+  "name": "Taranto",
+  "country": "Italia",
+  "region": "Puglia",
+
+  "coordinates": {
+    "latitude": 40.4644,
+    "longitude": 17.2470
+  },
+
+  "theme": "Inquinamento e salute",
+
+  "preview": {
+    "description": "Una città tra industria, ambiente e salute.",
+    "image": ""
+  },
+
+  "sections": [
+    {
+      "id": "territorio",
+      "title": "Il territorio",
+      "subjects": ["geografia", "storia"],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Una città sul mare",
+          "content": "Inserire qui la presentazione geografica e storica di Taranto."
+        }
+      ]
+    },
+    {
+      "id": "inquinamento",
+      "title": "L'inquinamento atmosferico",
+      "subjects": ["chimica", "scienze", "matematica"],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Le sostanze inquinanti",
+          "subject": "chimica",
+          "content": "Inserire qui l'approfondimento."
+        },
+        {
+          "type": "text",
+          "title": "Gli effetti sulla salute",
+          "subject": "scienze",
+          "content": "Inserire qui l'approfondimento."
+        }
+      ]
+    }
+  ],
+
+  "sources": []
+}
+
