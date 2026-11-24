@@ -3,54 +3,46 @@
   "id": "taranto",
   "name": "Taranto",
   "country": "Italia",
-  "region": "Puglia",
-
   "coordinates": {
     "latitude": 40.4644,
     "longitude": 17.2470
   },
-
-  "theme": "Inquinamento e salute",
-
-  "preview": {
-    "description": "Una città tra industria, ambiente e salute.",
-    "image": ""
-  },
-
+  "description": "Una città affacciata sul Mar Ionio, dove ambiente, industria e salute pubblica si incontrano.",
+  "topics": [
+    "inquinamento atmosferico",
+    "salute respiratoria",
+    "ambiente",
+    "salute pubblica"
+  ],
   "sections": [
     {
-      "id": "territorio",
-      "title": "Il territorio",
-      "subjects": ["geografia", "storia"],
+      "id": "air-quality",
+      "title": "Qualità dell'aria",
+      "description": "Il rapporto tra attività industriali, qualità dell'aria e salute.",
       "blocks": [
         {
           "type": "text",
-          "title": "Una città sul mare",
-          "content": "Inserire qui la presentazione geografica e storica di Taranto."
-        }
-      ]
-    },
-    {
-      "id": "inquinamento",
-      "title": "L'inquinamento atmosferico",
-      "subjects": ["chimica", "scienze", "matematica"],
-      "blocks": [
-        {
-          "type": "text",
-          "title": "Le sostanze inquinanti",
-          "subject": "chimica",
-          "content": "Inserire qui l'approfondimento."
+          "title": "Il contesto ambientale",
+          "content": "Taranto è un importante caso di studio per analizzare il rapporto tra attività industriali, ambiente e salute delle comunità. La qualità dell'aria è un elemento fondamentale per comprendere questa relazione.",
+          "subjects": [
+            "biology",
+            "chemistry",
+            "geography",
+            "health-education",
+            "civic-education"
+          ]
         },
         {
           "type": "text",
-          "title": "Gli effetti sulla salute",
-          "subject": "scienze",
-          "content": "Inserire qui l'approfondimento."
+          "title": "Gli inquinanti atmosferici",
+          "content": "Tra gli inquinanti da studiare figurano il particolato atmosferico (PM10 e PM2.5), il biossido di azoto e il benzo[a]pirene. Le loro fonti, concentrazioni ed effetti sulla salute sono differenti.",
+          "subjects": [
+            "chemistry",
+            "biology",
+            "health-education"
+          ]
         }
       ]
     }
-  ],
-
-  "sources": []
+  ]
 }
-
