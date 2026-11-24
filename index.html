@@ -9,8 +9,8 @@
 
   <link rel="stylesheet"
     href="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Widgets/widgets.css">
-
   <link rel="stylesheet" href="css/style.css">
+
   <script>
     window.CESIUM_BASE_URL =
       "https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/";
@@ -29,53 +29,84 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="eyebrow">UN PIANETA · UNA SOLA SALUTE</div>
-      <h1>La salute non ha<br><span>confini.</span></h1>
-      <p>Esplora il mondo e scopri il legame tra salute, ambiente e società.</p>
+    <div class="intro">
+      <div>
+        <span class="eyebrow">UN PIANETA · UNA SOLA SALUTE</span>
+        <h1>Esplora il mondo.</h1>
+        <p>Scopri le connessioni tra salute, ambiente e società.</p>
+      </div>
 
       <div class="search-box">
         <input id="citySearch" type="search"
-          placeholder="Cerca una città o un luogo...">
+          placeholder="Cerca una città o un Paese...">
         <button id="searchButton">Cerca</button>
       </div>
-    </section>
+    </div>
 
-    <section class="globe-section">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">ESPLORAZIONE GLOBALE</span>
-          <h2>Il nostro pianeta</h2>
+    <section class="workspace">
+      <div class="globe-panel">
+        <div class="panel-heading">
+          <span>ESPLORAZIONE GLOBALE</span>
+          <span class="live-indicator">● GLOBO 3D</span>
         </div>
-        <span class="status">GLOBO INTERATTIVO</span>
-      </div>
 
-      <div id="globeContainer">
         <div id="globe"></div>
-        <div class="globe-label">HEALTH PLANET · EARTH</div>
-      </div>
-    </section>
 
-    <section id="cityPreview" class="city-preview hidden">
-      <div class="preview-content">
-        <span class="eyebrow">LUOGO SELEZIONATO</span>
-        <h2 id="previewName"></h2>
-        <p id="previewDescription"></p>
-        <button id="openCityButton">Scopri questo luogo</button>
+        <div class="globe-footer">
+          <span>Trascina per ruotare</span>
+          <span>Rotella per ingrandire</span>
+        </div>
       </div>
-    </section>
 
-    <section id="cityContent" class="city-content hidden">
-      <button id="backButton" class="back-button">← Torna al globo</button>
-      <div class="eyebrow" id="cityCountry"></div>
-      <h2 id="cityTitle"></h2>
-      <p id="cityDescription"></p>
-      <div id="citySections"></div>
+      <aside class="information-panel" id="informationPanel">
+        <div id="welcomePanel">
+          <span class="eyebrow">BENVENUTO SU HEALTH PLANET</span>
+          <h2>Il mondo è il nostro campo di studio.</h2>
+          <p>
+            Seleziona un indicatore sul globo oppure cerca una città
+            per esplorarne le caratteristiche.
+          </p>
+
+          <div class="welcome-card">
+            <span>01</span>
+            <div>
+              <strong>Esplora</strong>
+              <p>Individua luoghi e aree geografiche.</p>
+            </div>
+          </div>
+
+          <div class="welcome-card">
+            <span>02</span>
+            <div>
+              <strong>Approfondisci</strong>
+              <p>Consulta testi, immagini e dati scientifici.</p>
+            </div>
+          </div>
+
+          <div class="welcome-card">
+            <span>03</span>
+            <div>
+              <strong>Collega le discipline</strong>
+              <p>Scopri come le materie scolastiche si incontrano.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="cityInformation" class="hidden">
+          <button id="backButton" class="back-button">← Tutti i luoghi</button>
+          <span class="eyebrow" id="cityCountry"></span>
+          <h2 id="cityTitle"></h2>
+          <p id="cityDescription"></p>
+          <div id="cityTopics" class="topic-list"></div>
+          <div id="citySections"></div>
+        </div>
+      </aside>
     </section>
   </main>
 
   <footer>
-    HEALTH PLANET <span>·</span> Un progetto di educazione alla salute
+    HEALTH PLANET · Progetto di educazione alla salute
+    <span> · Immagini del globo: NASA GIBS</span>
   </footer>
 
   <script type="module" src="js/main.js"></script>
